@@ -52,12 +52,12 @@ void FindText(std::fstream& input, const Args& args)
 
             pos += args.find_word.length();
         }
+    }
 
-        if (!found)
-        {
-            std::cout << "Text not found" << std::endl;
-            exit(1);
-        }
+    if (!found)
+    {
+        std::cout << "Text not found" << std::endl;
+        exit(1);
     }
 }
 
