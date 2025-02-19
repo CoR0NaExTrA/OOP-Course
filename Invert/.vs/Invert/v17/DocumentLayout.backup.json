@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zzenam\\source\\repos\\Invert\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7279B5EF-8A97-42B8-A048-3DC9E6DACDD5}|Invert\\Invert.vcxproj|C:\\Users\\Zzenam\\source\\repos\\Invert\\Invert\\Invert.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7279B5EF-8A97-42B8-A048-3DC9E6DACDD5}|Invert\\Invert.vcxproj|solutionrelative:Invert\\Invert.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7279B5EF-8A97-42B8-A048-3DC9E6DACDD5}|Invert\\Invert.vcxproj|C:\\Users\\Zzenam\\source\\repos\\Invert\\Invert\\matrix.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{7279B5EF-8A97-42B8-A048-3DC9E6DACDD5}|Invert\\Invert.vcxproj|solutionrelative:Invert\\matrix.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "matrix.txt",
+              "DocumentMoniker": "C:\\Users\\Zzenam\\source\\repos\\Invert\\Invert\\matrix.txt",
+              "RelativeDocumentMoniker": "Invert\\matrix.txt",
+              "ToolTip": "C:\\Users\\Zzenam\\source\\repos\\Invert\\Invert\\matrix.txt",
+              "RelativeToolTip": "Invert\\matrix.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-19T19:19:59.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Invert.cpp",
+              "DocumentMoniker": "C:\\Users\\Zzenam\\source\\repos\\Invert\\Invert\\Invert.cpp",
+              "RelativeDocumentMoniker": "Invert\\Invert.cpp",
+              "ToolTip": "C:\\Users\\Zzenam\\source\\repos\\Invert\\Invert\\Invert.cpp",
+              "RelativeToolTip": "Invert\\Invert.cpp",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-19T19:12:22.511Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
