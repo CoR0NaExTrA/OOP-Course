@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zzenam\\source\\repos\\HtmlDecode\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57CD3F78-A7C6-4389-902F-C9ACC0FAE3F3}|HtmlDecode\\HtmlDecode.vcxproj|C:\\Users\\Zzenam\\source\\repos\\HtmlDecode\\HtmlDecode\\HtmlDecode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{57CD3F78-A7C6-4389-902F-C9ACC0FAE3F3}|HtmlDecode\\HtmlDecode.vcxproj|solutionrelative:HtmlDecode\\HtmlDecode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HtmlDecode.cpp",
+              "DocumentMoniker": "C:\\Users\\Zzenam\\source\\repos\\HtmlDecode\\HtmlDecode\\HtmlDecode.cpp",
+              "RelativeDocumentMoniker": "HtmlDecode\\HtmlDecode.cpp",
+              "ToolTip": "C:\\Users\\Zzenam\\source\\repos\\HtmlDecode\\HtmlDecode\\HtmlDecode.cpp",
+              "RelativeToolTip": "HtmlDecode\\HtmlDecode.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-25T07:52:57.647Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
