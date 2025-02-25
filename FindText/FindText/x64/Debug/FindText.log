@@ -1,7 +1,11 @@
 ﻿  FindText.cpp
-  FindText.vcxproj -> C:\Users\Zzenam\source\repos\FindText\x64\Debug\FindText.exe
+  FindText.vcxproj -> C:\Users\iatro\Copy_Frontend\OOP-Course\FindText\x64\Debug\FindText.exe
   Text not found
   Test 1 passed
-  Test failed
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073: выход из команды ""C:\Users\Zzenam\source\repos\FindText\FindText\Tests.bat" "C:\Users\Zzenam\source\repos\FindText\x64\Debug\FindText.exe"
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073: :VCEnd" с кодом 1.
+  Сравнение файлов C:\USERS\IATRO\COPY_FRONTEND\OOP-COURSE\FINDTEXT\FINDTEXT\Result1.txt и C:\USERS\IATRO\COPY_FRONTEND\OOP-COURSE\FINDTEXT\FINDTEXT\ACTUAL.TXT
+  FC: различия не найдены
+  
+  Test 2 passed
+  Text not found
+  Test 3 passed
+  All tests passed successfully

@@ -21,5 +21,18 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="matrix.txt" />
+    <Text Include="Result.txt" />
+    <Text Include="InvalidMatrix.txt" />
+    <Text Include="Result2.txt" />
+    <Text Include="Non-invertible.txt" />
+    <Text Include="Result3.txt" />
+    <Text Include="Result4.txt" />
+    <Text Include="InvalidFormat.txt" />
+    <Text Include="Result5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tests.bat">
+      <Filter>Исходные файлы</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -21,6 +21,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Текст.txt" />
+    <Text Include="1F.txt" />
+    <Text Include="INT_MIN.txt" />
+    <Text Include="INT_MAX.txt" />
+    <Text Include="stoi.txt" />
+    <Text Include="Radix.txt" />
+    <Text Include="Pam.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Tests.bat">

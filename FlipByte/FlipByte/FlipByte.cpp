@@ -4,26 +4,41 @@
 
 int BIT_COUNT = 8;
 
+
+//todo: Исправить форматирование, обернуть в try..catch stoi, разобраться с реверсом битов, пограничнные значения и сделать тесты
 struct Args 
 {
-    int start_number;
+    int startNumber;
 };
 
 std::optional<Args> ParseArgs(int argc, char* argv[])
 {
     if (argc != 2)
     {
-        std::cerr << "Ошибка: введите одно число в качестве аргумента." << std::endl;
+        std::cerr << "Error: Enter a single number as an argument." << std::endl;
         return std::nullopt;
     }
     Args args;
-    args.start_number = std::stoi(argv[1]);
-    return args;
+    try
+    {
+        args.startNumber = std::stoi(argv[1]);
+        return args;
+        if (args.startNumber < 0 || args.startNumber > 255)
+        {
+            return std::nullopt;
+        }
+    }
+    catch (const std::string& err)
+    {
+        std::cerr << err << std::endl;
+        return std::nullopt;
+    }
 }
 
-int ReverseBits(const Args& args) {
+int ReverseBits(const Args& args) 
+{
     int reversed = 0;
-    int number = args.start_number;
+    int number = args.startNumber;
 
     for (int i = 0; i < BIT_COUNT; i++)
     {
@@ -45,7 +60,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    std::cout << "Начальное число: " << args->start_number << std::endl;
+    std::cout << "Начальное число: " << args->startNumber << std::endl;
 
     int num = ReverseBits(*args);
 

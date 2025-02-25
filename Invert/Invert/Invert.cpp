@@ -3,7 +3,8 @@
 #include <sstream>
 #include <iomanip>
 #include <cmath>
-
+// поменять название константы
+// подключить .clang-format
 const int N = 3;
 
 double FindDeterminant2d(double source[2][2]) {
@@ -42,7 +43,7 @@ bool InvertMatrix(double source[N][N], double result[N][N]) {
         std::cout << "Non-invertible" << std::endl;
         return false;
     }
-
+    // разделить for на подфункции
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             FindMinor(source, temp, i, j);
