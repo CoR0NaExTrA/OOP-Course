@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Zzenam\\source\\repos\\PrimeNumbers\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B33BD7B5-E2FA-4C89-ADFE-4F4A0D0A310C}|PrimeNumbers\\PrimeNumbers.vcxproj|C:\\Users\\Zzenam\\source\\repos\\PrimeNumbers\\PrimeNumbers\\PrimeNumbers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B33BD7B5-E2FA-4C89-ADFE-4F4A0D0A310C}|PrimeNumbers\\PrimeNumbers.vcxproj|solutionrelative:PrimeNumbers\\PrimeNumbers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PrimeNumbers.cpp",
+              "DocumentMoniker": "C:\\Users\\Zzenam\\source\\repos\\PrimeNumbers\\PrimeNumbers\\PrimeNumbers.cpp",
+              "RelativeDocumentMoniker": "PrimeNumbers\\PrimeNumbers.cpp",
+              "ToolTip": "C:\\Users\\Zzenam\\source\\repos\\PrimeNumbers\\PrimeNumbers\\PrimeNumbers.cpp",
+              "RelativeToolTip": "PrimeNumbers\\PrimeNumbers.cpp",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-26T11:46:47.413Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
