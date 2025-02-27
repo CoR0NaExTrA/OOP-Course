@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="HtmlDecode.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Tests.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
