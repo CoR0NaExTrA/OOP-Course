@@ -16,4 +16,7 @@ public:
     bool Withdraw(Money amount);
     [[nodiscard]] Money GetBalance() const;
     [[nodiscard]] bool HasAccount() const;
+    [[nodiscard]] std::optional<AccountId> GetAccountId() const {
+        return accountId;
+    }
 };

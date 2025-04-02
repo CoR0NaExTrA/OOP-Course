@@ -1,26 +1,44 @@
-#include "Bank.h"
-#include "Actor.h"
+#include "Homer.h"
+#include <iostream>
 
-class Homer : public Actor {
-public:
-    // Конструктор для Гомера
-    Homer(Bank& bank)
-        : Actor("Homer", 1000, bank) {}
+// Конструктор
+Homer::Homer(Bank& bank, Actor& marge, std::vector<Actor*> kids, Money initialCash, Money allowance, Money bill, Money kidsCash)
+    : Actor("Homer", initialCash, bank), bank(bank), marge(marge), children(std::move(kids)),
+    ALLOWANCE_FOR_MARGE(allowance), ELECTRICITY_BILL(bill), CASH_FOR_KIDS(kidsCash) {
+    bankAccount.OpenAccount(); // Открываем банковский счёт Гомера
+}
 
-    // Специфическое поведение Гомера (например, он покупает пиво)
-    void Act() override {
-        std::cout << name << " is going to buy beer." << std::endl;
+// Реализация действий Гомера
+void Homer::Act() {
+    // Проверяем, есть ли у Гомера банковский счёт
+    if (!bankAccount.HasAccount()) {
+        std::cerr << name << " не имеет банковского счёта!\n";
+        return;
+    }
 
-        // Гомер тратит деньги на пиво (например, 150)
-        if (PayWithCash(*this, 150)) {
-            std::cout << name << " bought beer for 150." << std::endl;
+    // Перевод денег Мардж
+    if (GetBankBalance() >= ALLOWANCE_FOR_MARGE) {
+        if (marge.GetBankAccount().HasAccount()) {
+            bank.SendMoney(bankAccount.GetAccountId().value(), marge.GetBankAccount().GetAccountId().value(), ALLOWANCE_FOR_MARGE);
+            std::cout << name << " перевёл " << ALLOWANCE_FOR_MARGE << " на счёт Мардж.\n";
         }
         else {
-            std::cout << name << " doesn't have enough cash to buy beer!" << std::endl;
+            std::cerr << "Ошибка: Мардж не имеет банковского счёта!\n";
         }
-
-        // Гомер кладёт деньги на банковский счёт
-        DepositToBank(200);
-        std::cout << name << " deposited 200 into the bank." << std::endl;
     }
-};
+
+    // Оплата счёта за электричество
+    if (GetBankBalance() >= ELECTRICITY_BILL) {
+        bank.Withdraw(bankAccount.GetAccountId().value(), ELECTRICITY_BILL);
+        std::cout << name << " оплатил " << ELECTRICITY_BILL << " за электричество.\n";
+    }
+
+    // Раздача наличных детям
+    for (Actor* child : children) {
+        if (GetBankBalance() >= CASH_FOR_KIDS) {
+            WithdrawFromBank(CASH_FOR_KIDS);
+            child->ReceiveCash(CASH_FOR_KIDS);
+            std::cout << name << " дал " << CASH_FOR_KIDS << " наличными " << child->GetName() << ".\n";
+        }
+    }
+}

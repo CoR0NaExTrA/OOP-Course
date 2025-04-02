@@ -1,12 +1,19 @@
 #pragma once
 #include "Actor.h"
+#include "Bank.h"
 
-// Класс Гомера
 class Homer : public Actor {
-public:
-    Homer();
-    void Act(Bank& bank) override;
-    std::string GetName() const override;
 private:
-    long long salary;  // Зарплата Гомера
+    Bank& bank;  // Ссылка на банк
+    Actor& marge;  // Ссылка на Мардж
+    std::vector<Actor*> children;  // Список детей
+
+    const Money ALLOWANCE_FOR_MARGE;
+    const Money ELECTRICITY_BILL;
+    const Money CASH_FOR_KIDS;
+
+public:
+    Homer(Bank& bank, Actor& marge, std::vector<Actor*> kids, Money initialCash, Money allowance, Money bill, Money kidsCash);
+
+    void Act() override;
 };
