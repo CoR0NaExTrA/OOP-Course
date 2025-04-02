@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4f0d5322-6c1f-4d72-a04b-0bad07c26835}</ProjectGuid>
-    <RootNamespace>EconomySimulation</RootNamespace>
+    <ProjectGuid>{08c7264d-4ab5-4f59-ba61-02544a44592e}</ProjectGuid>
+    <RootNamespace>Banktests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,21 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="Bank.cpp" />
-    <ClCompile Include="Homer.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Actor.h" />
-    <ClInclude Include="Apu.h" />
-    <ClInclude Include="Bank.h" />
-    <ClInclude Include="BankAccount.h" />
-    <ClInclude Include="BartLisa.h" />
-    <ClInclude Include="Burns.h" />
-    <ClInclude Include="Homer.h" />
-    <ClInclude Include="Marge.h" />
-    <ClInclude Include="Wallet.h" />
+    <ClCompile Include="..\EconomySimulation\Bank.cpp" />
+    <ClCompile Include="Bank_tests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EconomySimulation", "EconomySimulation\EconomySimulation.vcxproj", "{4F0D5322-6C1F-4D72-A04B-0BAD07C26835}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bank_tests", "Bank_tests\Bank_tests.vcxproj", "{08C7264D-4AB5-4F59-BA61-02544A44592E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{4F0D5322-6C1F-4D72-A04B-0BAD07C26835}.Release|x64.Build.0 = Release|x64
 		{4F0D5322-6C1F-4D72-A04B-0BAD07C26835}.Release|x86.ActiveCfg = Release|Win32
 		{4F0D5322-6C1F-4D72-A04B-0BAD07C26835}.Release|x86.Build.0 = Release|Win32
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Debug|x64.ActiveCfg = Debug|x64
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Debug|x64.Build.0 = Debug|x64
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Debug|x86.ActiveCfg = Debug|Win32
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Debug|x86.Build.0 = Debug|Win32
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Release|x64.ActiveCfg = Release|x64
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Release|x64.Build.0 = Release|x64
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Release|x86.ActiveCfg = Release|Win32
+		{08C7264D-4AB5-4F59-BA61-02544A44592E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
