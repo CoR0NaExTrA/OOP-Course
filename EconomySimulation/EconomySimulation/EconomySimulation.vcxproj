@@ -132,20 +132,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Apu.cpp" />
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="BartLisa.cpp" />
     <ClCompile Include="Homer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Marge.cpp" />
+    <ClCompile Include="MrBurns.cpp" />
     <ClCompile Include="Wallet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="BankAccount.h" />
+    <ClInclude Include="BartLisa.h" />
     <ClInclude Include="Homer.h" />
     <ClInclude Include="Marge.h" />
+    <ClInclude Include="MrBurns.h" />
     <ClInclude Include="Wallet.h" />
+    <ClInclude Include="Apu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

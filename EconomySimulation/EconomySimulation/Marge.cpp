@@ -1,18 +1,18 @@
 #include "Marge.h"
 #include <iostream>
 
-Marge::Marge(Bank& bank) : Actor("Marge", 500, bank) {}
+Marge::Marge(Bank& bank, Actor& apu, Money initialCash, Money groceryBudget)
+    : Actor("Marge", initialCash, bank), bank(bank), apu(apu), groceryBudget(groceryBudget) {
+    bankAccount.OpenAccount(); // Открываем счёт
+}
 
 void Marge::Act() {
-    std::cout << name << " is saving money." << std::endl;
-
-    DepositToBank(100);
-    std::cout << name << " deposited 100 into the bank." << std::endl;
-
-    if (WithdrawFromBank(50)) {
-        std::cout << name << " withdrew 50 from the bank." << std::endl;
+    // Покупка продуктов у Апу
+    if (GetBankBalance() >= groceryBudget) {
+        bank.SendMoney(bankAccount.GetAccountId().value(), apu.GetBankAccount().GetAccountId().value(), groceryBudget);
+        std::cout << name << " купила продукты у Апу за " << groceryBudget << ".\n";
     }
     else {
-        std::cout << name << " couldn't withdraw money from the bank!" << std::endl;
+        std::cout << name << " не хватает денег на продукты.\n";
     }
 }

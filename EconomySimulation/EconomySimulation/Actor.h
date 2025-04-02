@@ -39,4 +39,12 @@ public:
     [[nodiscard]] Money GetCash() const {
         return wallet.GetCash(); // Получаем сумму наличных
     }
+
+    [[nodiscard]] BankAccount& GetBankAccount() {
+        return bankAccount;
+    }
+
+    [[nodiscard]] const std::string& GetName() const {
+        return name;
+    }
 };
