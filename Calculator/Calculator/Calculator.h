@@ -15,13 +15,15 @@ using Value = std::optional<double>;
 
 class IdentifierTable;
 
-class Expression {
+class Expression 
+{
 public:
     virtual Value Evaluate(const IdentifierTable& table) const = 0;
     virtual ~Expression() = default;
 };
 
-class Literal : public Expression {
+class Literal : public Expression 
+{
 public:
     explicit Literal(double value) : m_value(value) {}
     Value Evaluate(const IdentifierTable&) const override { return m_value; }
@@ -29,7 +31,8 @@ private:
     double m_value;
 };
 
-class VariableReference : public Expression {
+class VariableReference : public Expression 
+{
 public:
     explicit VariableReference(std::string name) : m_name(std::move(name)) {}
     Value Evaluate(const IdentifierTable& table) const override;
@@ -37,7 +40,8 @@ private:
     std::string m_name;
 };
 
-class BinaryOperation : public Expression {
+class BinaryOperation : public Expression 
+{
 public:
     enum class Operator { Add, Subtract, Multiply, Divide };
 
@@ -52,7 +56,8 @@ private:
     Operator m_operator;
 };
 
-class IdentifierTable {
+class IdentifierTable 
+{
 public:
     bool DeclareVariable(const std::string& name);
     bool AssignVariable(const std::string& name, double value);
@@ -71,7 +76,8 @@ private:
     std::unordered_map<std::string, std::unique_ptr<Expression>> m_functions;
 };
 
-class Calculator {
+class Calculator 
+{
 public:
     void ExecuteCommand(const std::string& command);
 
@@ -82,7 +88,8 @@ private:
     void PrintFunctions() const;
 };
 
-class CommandParser {
+class CommandParser 
+{
 public:
     void Run();
 
