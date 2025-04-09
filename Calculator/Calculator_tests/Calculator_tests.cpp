@@ -9,10 +9,12 @@ TEST_CASE("Declare and assign variables") {
     Calculator calc;
 
     SECTION("Declare variable") {
-        std::stringstream ss("var x\nprint x\n");
-        std::cin.rdbuf(ss.rdbuf());
         calc.ExecuteCommand("var x");
+        std::ostringstream out;
+        std::streambuf* old = std::cout.rdbuf(out.rdbuf());
         calc.ExecuteCommand("print x");
+        std::cout.rdbuf(old);
+        REQUIRE(out.str() == "nan\n");
     }
 
     SECTION("Assign value to variable") {
@@ -81,4 +83,47 @@ TEST_CASE("Print all variables and functions") {
     std::string output = out.str();
     REQUIRE(output.find("x:1.50") != std::string::npos);
     REQUIRE(output.find("fx:3.00") != std::string::npos);
+}
+
+TEST_CASE("Invalid expression")
+{
+    Calculator calc;
+
+    SECTION("Invalid command declare variable")
+    {
+        std::ostringstream out;
+        std::streambuf* old = std::cout.rdbuf(out.rdbuf());
+        calc.ExecuteCommand("var");
+        std::cout.rdbuf(old);
+        REQUIRE(out.str() == "Invalid usage\n");
+    }
+
+    SECTION("Invalid command declare function")
+    {
+        calc.ExecuteCommand("var x");
+        std::ostringstream out;
+        std::streambuf* old = std::cout.rdbuf(out.rdbuf());
+        calc.ExecuteCommand("fn");
+        std::cout.rdbuf(old);
+        REQUIRE(out.str() == "Invalid usage\n");
+    }
+
+    SECTION("Invalid name variable")
+    {
+        std::ostringstream out;
+        std::streambuf* old = std::cout.rdbuf(out.rdbuf());
+        calc.ExecuteCommand("var 1x");
+        std::cout.rdbuf(old);
+        REQUIRE(out.str() == "Invalid usage\n");
+    }
+
+    SECTION("Invalid name function")
+    {
+        calc.ExecuteCommand("var x");
+        std::ostringstream out;
+        std::streambuf* old = std::cout.rdbuf(out.rdbuf());
+        calc.ExecuteCommand("fn 1x");
+        std::cout.rdbuf(old);
+        REQUIRE(out.str() == "Invalid usage\n");
+    }
 }

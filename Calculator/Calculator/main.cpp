@@ -1,4 +1,4 @@
-﻿#include "../Calculator/Calculator.h"
+﻿#include "../Calculator/Controller.h"
 
 int main() {
     CommandParser parser;

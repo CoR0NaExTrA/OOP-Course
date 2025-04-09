@@ -10,20 +10,19 @@
 #include <iomanip>
 #include <cctype>
 #include <algorithm>
+#include <vector>
 
 using Value = std::optional<double>;
 
 class IdentifierTable;
 
-class Expression 
-{
+class Expression {
 public:
     virtual Value Evaluate(const IdentifierTable& table) const = 0;
     virtual ~Expression() = default;
 };
 
-class Literal : public Expression 
-{
+class Literal : public Expression {
 public:
     explicit Literal(double value) : m_value(value) {}
     Value Evaluate(const IdentifierTable&) const override { return m_value; }
@@ -31,8 +30,7 @@ private:
     double m_value;
 };
 
-class VariableReference : public Expression 
-{
+class VariableReference : public Expression {
 public:
     explicit VariableReference(std::string name) : m_name(std::move(name)) {}
     Value Evaluate(const IdentifierTable& table) const override;
@@ -40,8 +38,7 @@ private:
     std::string m_name;
 };
 
-class BinaryOperation : public Expression 
-{
+class BinaryOperation : public Expression {
 public:
     enum class Operator { Add, Subtract, Multiply, Divide };
 
@@ -56,8 +53,7 @@ private:
     Operator m_operator;
 };
 
-class IdentifierTable 
-{
+class IdentifierTable {
 public:
     bool DeclareVariable(const std::string& name);
     bool AssignVariable(const std::string& name, double value);
@@ -76,8 +72,21 @@ private:
     std::unordered_map<std::string, std::unique_ptr<Expression>> m_functions;
 };
 
-class Calculator 
-{
+enum class TokenType {
+    Identifier,
+    Number,
+    Operator,
+    Equals,
+    Keyword,
+    Unknown
+};
+
+struct Token {
+    TokenType type;
+    std::string value;
+};
+
+class Calculator {
 public:
     void ExecuteCommand(const std::string& command);
 
@@ -86,10 +95,10 @@ private:
     void PrintIdentifier(const std::string& name) const;
     void PrintVariables() const;
     void PrintFunctions() const;
+    std::vector<Token> Tokenize(const std::string& input);
 };
 
-class CommandParser 
-{
+class CommandParser {
 public:
     void Run();
 
