@@ -5,12 +5,14 @@
 using AccountId = unsigned long long;
 using Money = long long;
 
-class BankOperationError : public std::runtime_error {
+class BankOperationError : public std::runtime_error 
+{
 public:
     using std::runtime_error::runtime_error;
 };
 
-class Bank {
+class Bank 
+{
 public:
     explicit Bank(Money cash);
     Bank(const Bank&) = delete;
