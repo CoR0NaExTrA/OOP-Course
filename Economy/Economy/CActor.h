@@ -27,7 +27,7 @@ private:
 class CActorBank : public CActor
 {
 public:
-	CActorBank(Money cash, Bank& bank)
+	CActorBank(Money cash, ÑBank& bank)
 		: bank(bank), CActor(cash)
 	{
 		accountId = bank.OpenAccount();
@@ -44,7 +44,7 @@ public:
 
 private:
 	AccountId accountId;
-	Bank& bank;
+	ÑBank& bank;
 };
 
 struct Springfield

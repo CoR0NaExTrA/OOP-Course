@@ -12,7 +12,7 @@ public:
 private:
 	[[nodiscard]] bool IsAgreedState() const;
 
-	std::unique_ptr<Bank> m_bank;
+	std::unique_ptr<ÑBank> m_bank;
 
 	std::unique_ptr<Homer> m_homer;
 	std::unique_ptr<Marge> m_marge;

@@ -5,7 +5,7 @@
 class Homer : public CActorBank
 {
 public:
-	explicit Homer(Money cash, Bank& bank)
+	explicit Homer(Money cash, ÑBank& bank)
 		: CActorBank(cash, bank) {}
 
 	void Act(Springfield& springfield) override;
@@ -14,7 +14,7 @@ public:
 class Marge : public CActorBank
 {
 public:
-    explicit Marge(Money cash, Bank& bank)
+    explicit Marge(Money cash, ÑBank& bank)
         : CActorBank(cash, bank) {}
 
     void Act(Springfield& springfield) override;
@@ -23,7 +23,7 @@ public:
 class Apu : public CActorBank
 {
 public:
-    explicit Apu(Money cash, Bank& bank)
+    explicit Apu(Money cash, ÑBank& bank)
         : CActorBank(cash, bank) {}
 
     void Act(Springfield& springfield) override;
@@ -32,7 +32,7 @@ public:
 class MrBurns : public CActorBank
 {
 public:
-    explicit MrBurns(Money cash, Bank& bank)
+    explicit MrBurns(Money cash, ÑBank& bank)
         : CActorBank(cash, bank) {}
 
     void Act(Springfield& springfield) override;
@@ -41,7 +41,7 @@ public:
 class Snake : public CActorBank
 {
 public:
-    explicit Snake(Money cash, Bank& bank)
+    explicit Snake(Money cash, ÑBank& bank)
         : CActorBank(cash, bank) {}
 
     void Act(Springfield& springfield) override;
@@ -50,7 +50,7 @@ public:
 class Smithers : public CActorBank
 {
 public:
-    explicit Smithers(Money cash, Bank& bank)
+    explicit Smithers(Money cash, ÑBank& bank)
         : CActorBank(cash, bank) {}
 
     void Act(Springfield& springfield) override;

@@ -11,12 +11,12 @@ public:
     using std::runtime_error::runtime_error;
 };
 
-class Bank 
+class ÑBank 
 {
 public:
-    explicit Bank(Money cash);
-    Bank(const Bank&) = delete;
-    Bank& operator=(const Bank&) = delete;
+    explicit ÑBank(Money cash);
+    ÑBank(const ÑBank&) = delete;
+    ÑBank& operator=(const ÑBank&) = delete;
 
     void SendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amount);
     [[nodiscard]] bool TrySendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amount);

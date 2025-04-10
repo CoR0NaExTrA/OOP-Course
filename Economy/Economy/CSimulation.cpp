@@ -2,7 +2,7 @@
 
 CSimulation::CSimulation()
 {
-	m_bank = std::make_unique<Bank>(m_initialCash);
+	m_bank = std::make_unique<ÑBank>(m_initialCash);
 
 	m_homer = std::make_unique<Homer>(2500, *m_bank);
 	m_marge = std::make_unique<Marge>(1000, *m_bank);

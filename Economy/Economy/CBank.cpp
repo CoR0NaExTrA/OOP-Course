@@ -1,7 +1,7 @@
 #include "../Economy/CBank.h"
 #include <iostream>
 
-Bank::Bank(Money initialCash) 
+ÑBank::ÑBank(Money initialCash) 
 {
     if (initialCash < 0) 
     {
@@ -10,7 +10,7 @@ Bank::Bank(Money initialCash)
     cash = initialCash;
 }
 
-void Bank::ValidateAccount(AccountId accountId) const 
+void ÑBank::ValidateAccount(AccountId accountId) const 
 {
     if (accounts.find(accountId) == accounts.end()) 
     {
@@ -18,7 +18,7 @@ void Bank::ValidateAccount(AccountId accountId) const
     }
 }
 
-void Bank::ValidateAmount(Money amount) const 
+void ÑBank::ValidateAmount(Money amount) const 
 {
     if (amount < 0) 
     {
@@ -26,14 +26,14 @@ void Bank::ValidateAmount(Money amount) const
     }
 }
 
-AccountId Bank::OpenAccount() 
+AccountId ÑBank::OpenAccount() 
 {
     AccountId accountId = nextAccountId++;
     accounts[accountId] = 0;
     return accountId;
 }
 
-Money Bank::CloseAccount(AccountId accountId) 
+Money ÑBank::CloseAccount(AccountId accountId) 
 {
     ValidateAccount(accountId);
     Money balance = accounts[accountId];
@@ -42,18 +42,18 @@ Money Bank::CloseAccount(AccountId accountId)
     return balance;
 }
 
-Money Bank::GetCash() const 
+Money ÑBank::GetCash() const 
 {
     return cash;
 }
 
-Money Bank::GetAccountBalance(AccountId accountId) const 
+Money ÑBank::GetAccountBalance(AccountId accountId) const 
 {
     ValidateAccount(accountId);
     return accounts.at(accountId);
 }
 
-void Bank::DepositMoney(AccountId accountId, Money amount) 
+void ÑBank::DepositMoney(AccountId accountId, Money amount) 
 {
     ValidateAmount(amount);
     ValidateAccount(accountId);
@@ -65,7 +65,7 @@ void Bank::DepositMoney(AccountId accountId, Money amount)
     accounts[accountId] += amount;
 }
 
-void Bank::WithdrawMoney(AccountId accountId, Money amount) 
+void ÑBank::WithdrawMoney(AccountId accountId, Money amount) 
 {
     ValidateAmount(amount);
     ValidateAccount(accountId);
@@ -77,7 +77,7 @@ void Bank::WithdrawMoney(AccountId accountId, Money amount)
     cash += amount;
 }
 
-bool Bank::TryWithdrawMoney(AccountId accountId, Money amount) 
+bool ÑBank::TryWithdrawMoney(AccountId accountId, Money amount) 
 {
     try
     {
@@ -92,7 +92,7 @@ bool Bank::TryWithdrawMoney(AccountId accountId, Money amount)
     return true;
 }
 
-void Bank::SendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amount) 
+void ÑBank::SendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amount) 
 {
     ValidateAmount(amount);
     ValidateAccount(srcAccountId);
@@ -104,7 +104,7 @@ void Bank::SendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amoun
     accounts[dstAccountId] += amount;
 }
 
-bool Bank::TrySendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amount)
+bool ÑBank::TrySendMoney(AccountId srcAccountId, AccountId dstAccountId, Money amount)
 {
     try
     {
