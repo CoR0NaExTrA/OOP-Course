@@ -1,6 +1,7 @@
 #pragma once
 #include "ISolidShape.h"
 #include "CPoint.h"
+#include "ICanvasDrawable.h"
 
 class CTriangle : public ISolidShape
 {
@@ -16,6 +17,8 @@ public:
     CPoint GetVertex1() const;
     CPoint GetVertex2() const;
     CPoint GetVertex3() const;
+
+    void Draw(ICanvas& canvas) const;
 
 private:
     CPoint m_v1, m_v2, m_v3;

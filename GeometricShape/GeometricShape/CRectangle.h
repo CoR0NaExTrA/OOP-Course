@@ -1,6 +1,7 @@
 #pragma once
 #include "ISolidShape.h"
 #include "CPoint.h"
+#include "ICanvasDrawable.h"
 
 class CRectangle : public ISolidShape
 {
@@ -16,6 +17,8 @@ public:
     CPoint GetLeftTop() const;
     double GetWidth() const;
     double GetHeight() const;
+
+    void Draw(ICanvas& canvas) const;
 
 private:
     CPoint m_leftTop;

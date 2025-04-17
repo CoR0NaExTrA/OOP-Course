@@ -1,6 +1,7 @@
 #pragma once
 #include "ISolidShape.h"
 #include "CPoint.h"
+#include "ICanvasDrawable.h"
 
 const double M_PI = 3.14;
 
@@ -17,6 +18,8 @@ public:
 
     CPoint GetCenter() const;
     double GetRadius() const;
+
+    void Draw(ICanvas& canvas) const;
 
 private:
     CPoint m_center;

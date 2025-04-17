@@ -13,48 +13,75 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Shapes">
+      <UniqueIdentifier>{3cdca92d-9347-4530-a538-1e9a138550e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Canvas">
+      <UniqueIdentifier>{25743a1a-7052-42b9-94ee-ced5ebc649e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Interfaces">
+      <UniqueIdentifier>{c30c8088-5184-4b3a-aae3-bb74c73d50ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Shapes">
+      <UniqueIdentifier>{392e5359-db21-4892-89b7-e2070bbd75c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Canvas">
+      <UniqueIdentifier>{462140b8-8a75-4261-ba3c-e1fd6174a800}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CPoint.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CLineSegment.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="CTriangle.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="CRectangle.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="CPoint.cpp">
+      <Filter>Исходные файлы\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="CLineSegment.cpp">
+      <Filter>Исходные файлы\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="CCircle.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="CCanvas.cpp">
+      <Filter>Исходные файлы\Canvas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IShape.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ISolidShape.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CPoint.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="CCircle.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
     </ClInclude>
     <ClInclude Include="CLineSegment.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Shapes</Filter>
     </ClInclude>
-    <ClInclude Include="CTriangle.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="CPoint.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
     </ClInclude>
     <ClInclude Include="CRectangle.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Shapes</Filter>
     </ClInclude>
-    <ClInclude Include="CCircle.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="CTriangle.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="CCanvas.h">
+      <Filter>Файлы заголовков\Canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="IShape.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ISolidShape.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ICanvas.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ICanvasDrawable.h">
+      <Filter>Файлы заголовков\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 #pragma once
 #include "IShape.h"
 #include "CPoint.h"
+#include "ICanvasDrawable.h"
 
 class CLineSegment : public IShape
 {
@@ -14,6 +15,8 @@ public:
 
     CPoint GetStartPoint() const;
     CPoint GetEndPoint() const;
+
+    void Draw(ICanvas& canvas) const;
 
 private:
     CPoint m_start;

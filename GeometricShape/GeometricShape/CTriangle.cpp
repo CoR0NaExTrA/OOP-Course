@@ -66,3 +66,11 @@ CPoint CTriangle::GetVertex3() const
 {
     return m_v3;
 }
+
+void CTriangle::Draw(ICanvas& canvas) const
+{
+    canvas.FillPolygon({ m_v1, m_v2, m_v3 }, m_fillColor);
+    canvas.DrawLine(m_v1, m_v2, m_outlineColor);
+    canvas.DrawLine(m_v2, m_v3, m_outlineColor);
+    canvas.DrawLine(m_v3, m_v1, m_outlineColor);
+}

@@ -50,3 +50,17 @@ double CRectangle::GetHeight() const
 {
     return m_height;
 }
+
+void CRectangle::Draw(ICanvas& canvas) const
+{
+    CPoint topLeft = m_leftTop;
+    CPoint topRight = { m_leftTop.GetX() + m_width, m_leftTop.GetY() };
+    CPoint bottomLeft = { m_leftTop.GetX(), m_leftTop.GetY() + m_height };
+    CPoint bottomRight = { m_leftTop.GetX() + m_width, m_leftTop.GetY() + m_height };
+
+    canvas.FillPolygon({ topLeft, topRight, bottomRight, bottomLeft }, m_fillColor);
+    canvas.DrawLine(topLeft, topRight, m_outlineColor);
+    canvas.DrawLine(topRight, bottomRight, m_outlineColor);
+    canvas.DrawLine(bottomRight, bottomLeft, m_outlineColor);
+    canvas.DrawLine(bottomLeft, topLeft, m_outlineColor);
+}
