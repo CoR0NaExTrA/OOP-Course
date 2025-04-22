@@ -18,41 +18,62 @@ unsigned CDate::DateToDays(unsigned d, unsigned m, unsigned y)
     {
         return MAX_DAYS;
     }
-    unsigned days = 0;
-    for (unsigned year = MIN_YEAR; year < y; ++year)
+
+    unsigned yearDiff = y - MIN_YEAR;
+
+    unsigned leapYears = (y - 1) / 4 - (y - 1) / 100 + (y - 1) / 400
+        - (MIN_YEAR - 1) / 4 + (MIN_YEAR - 1) / 100 - (MIN_YEAR - 1) / 400;
+
+    unsigned daysFromYears = yearDiff * 365 + leapYears;
+
+    unsigned daysFromMonths = 0;
+    for (unsigned i = 1; i < m; ++i)
     {
-        days += IsLeapYear(year) ? 366 : 365;
+        daysFromMonths += GetDaysInMonth(i, y);
     }
-    for (unsigned month = 1; month < m; ++month)
-    {
-        days += GetDaysInMonth(month, y);
-    }
-    days += d - 1;
-    return days;
+
+    return daysFromYears + daysFromMonths + (d - 1);
 }
+
 
 std::tuple<unsigned, unsigned, unsigned> CDate::GetDMY() const
 {
     if (!IsValid()) return { 0, 0, 0 };
 
     unsigned days = m_days.value();
-    unsigned y = MIN_YEAR;
+
+    unsigned y = MIN_YEAR + days / 365;
+
     while (true)
     {
         unsigned yearDays = IsLeapYear(y) ? 366 : 365;
-        if (days < yearDays) break;
-        days -= yearDays;
+        unsigned daysUpToYear = DateToDays(1, 1, y);
+        if (days < daysUpToYear)
+        {
+            --y;
+            break;
+        }
+        if (days < daysUpToYear + yearDays)
+        {
+            break;
+        }
         ++y;
     }
+
+    unsigned daysInYear = days - DateToDays(1, 1, y);
+
     unsigned m = 1;
     while (true)
     {
         unsigned monthDays = GetDaysInMonth(m, y);
-        if (days < monthDays) break;
-        days -= monthDays;
+        if (daysInYear < monthDays) break;
+        daysInYear -= monthDays;
         ++m;
     }
-    return { days + 1, m, y };
+
+    unsigned d = daysInYear + 1;
+
+    return { d, m, y };
 }
 
 CDate::CDate(unsigned day, Month month, unsigned year)

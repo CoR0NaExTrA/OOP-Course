@@ -40,6 +40,21 @@ TEST_CASE("Non-leap year 29 Feb is invalid") {
     REQUIRE(!date.IsValid());
 }
 
+TEST_CASE("Invalid date 31.12.1969") {
+    CDate date(31, Month::DECEMBER, 1969);
+    REQUIRE(!date.IsValid());
+}
+
+TEST_CASE("Invalid date with negative day") {
+    CDate date(-1, Month::DECEMBER, 1969);
+    REQUIRE(!date.IsValid());
+}
+
+TEST_CASE("Invalid date with negative year") {
+    CDate date(31, Month::DECEMBER, -1);
+    REQUIRE(!date.IsValid());
+}
+
 TEST_CASE("Invalid date constructor") {
     CDate date(99, static_cast<Month>(99), 10983);
     REQUIRE(!date.IsValid());

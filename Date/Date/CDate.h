@@ -26,12 +26,32 @@ public:
     CDate() : m_days(0) {}
     CDate(unsigned day, Month month, unsigned year);
     explicit CDate(unsigned timestamp);
+    ~CDate() = default;
 
     unsigned GetDay() const;
     Month GetMonth() const;
     unsigned GetYear() const;
     WeekDay GetWeekDay() const;
     bool IsValid() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const CDate& date);
+    friend std::istream& operator>>(std::istream& is, CDate& date);
+
+    CDate& operator++();
+    CDate operator++(int);
+    CDate& operator--();
+    CDate operator--(int);
+    CDate operator+(int days) const;
+    CDate operator-(int days) const;
+    int operator-(const CDate& other) const;
+    CDate& operator+=(int days);
+    CDate& operator-=(int days);
+    bool operator==(const CDate& other) const;
+    bool operator!=(const CDate& other) const;
+    bool operator<(const CDate& other) const;
+    bool operator<=(const CDate& other) const;
+    bool operator>(const CDate& other) const;
+    bool operator>=(const CDate& other) const;
 
 private:
     static constexpr unsigned MIN_YEAR = 1970;
