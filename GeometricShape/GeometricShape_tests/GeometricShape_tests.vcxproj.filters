@@ -18,16 +18,16 @@
     <ClCompile Include="GeometricShape_tests.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\GeometricShape\CLineSegment.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\GeometricShape\CRectangle.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\GeometricShape\CCircle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="..\GeometricShape\CLineSegment.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="..\GeometricShape\CPoint.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeometricShape\CRectangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="..\GeometricShape\CTriangle.cpp">

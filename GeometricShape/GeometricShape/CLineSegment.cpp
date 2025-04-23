@@ -3,7 +3,7 @@
 #include <sstream>
 
 CLineSegment::CLineSegment(const CPoint& start, const CPoint& end, uint32_t outlineColor)
-    : m_start(start), m_end(end), m_outlineColor(outlineColor)
+    : CShape(outlineColor), m_start(start), m_end(end)
 {
 }
 
@@ -26,11 +26,6 @@ std::string CLineSegment::ToString() const
         << ", end=" << m_end.ToString()
         << ", color=#" << std::hex << m_outlineColor;
     return oss.str();
-}
-
-uint32_t CLineSegment::GetOutlineColor() const
-{
-    return m_outlineColor;
 }
 
 CPoint CLineSegment::GetStartPoint() const

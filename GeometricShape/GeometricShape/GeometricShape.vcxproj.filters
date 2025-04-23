@@ -51,6 +51,9 @@
     <ClCompile Include="CCanvas.cpp">
       <Filter>Исходные файлы\Canvas</Filter>
     </ClCompile>
+    <ClCompile Include="CShapeManager.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCircle.h">
@@ -82,6 +85,15 @@
     </ClInclude>
     <ClInclude Include="ICanvasDrawable.h">
       <Filter>Файлы заголовков\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="CShapeManager.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CShape.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="CSolidShape.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

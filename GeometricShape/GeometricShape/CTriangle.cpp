@@ -13,7 +13,7 @@ namespace
 }
 
 CTriangle::CTriangle(const CPoint& v1, const CPoint& v2, const CPoint& v3, uint32_t outlineColor, uint32_t fillColor)
-    : m_v1(v1), m_v2(v2), m_v3(v3), m_outlineColor(outlineColor), m_fillColor(fillColor)
+    : CSolidShape(outlineColor, fillColor), m_v1(v1), m_v2(v2), m_v3(v3)
 {
 }
 
@@ -40,16 +40,6 @@ std::string CTriangle::ToString() const
         << ", OutlineColor=#" << std::hex << m_outlineColor
         << ", FillColor=#" << std::hex << m_fillColor;
     return oss.str();
-}
-
-uint32_t CTriangle::GetOutlineColor() const
-{
-    return m_outlineColor;
-}
-
-uint32_t CTriangle::GetFillColor() const
-{
-    return m_fillColor;
 }
 
 CPoint CTriangle::GetVertex1() const

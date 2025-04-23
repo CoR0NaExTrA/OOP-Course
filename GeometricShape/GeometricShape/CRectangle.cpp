@@ -2,7 +2,7 @@
 #include <sstream>
 
 CRectangle::CRectangle(const CPoint& leftTop, double width, double height, uint32_t outlineColor, uint32_t fillColor)
-    : m_leftTop(leftTop), m_width(width), m_height(height), m_outlineColor(outlineColor), m_fillColor(fillColor)
+    : CSolidShape(outlineColor, fillColor), m_leftTop(leftTop), m_width(width), m_height(height)
 {
 }
 
@@ -24,16 +24,6 @@ std::string CRectangle::ToString() const
         << ", OutlineColor=#" << std::hex << m_outlineColor
         << ", FillColor=#" << std::hex << m_fillColor;
     return oss.str();
-}
-
-uint32_t CRectangle::GetOutlineColor() const
-{
-    return m_outlineColor;
-}
-
-uint32_t CRectangle::GetFillColor() const
-{
-    return m_fillColor;
 }
 
 CPoint CRectangle::GetLeftTop() const

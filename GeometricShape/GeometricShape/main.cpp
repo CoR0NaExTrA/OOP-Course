@@ -1,110 +1,47 @@
-﻿#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
-#include <memory>
-#include <algorithm>
-#include "ISolidShape.h"
-#include "CLineSegment.h"
-#include "CTriangle.h"
-#include "CRectangle.h"
-#include "CCircle.h"
+﻿#include "CShapeManager.h"
+#include "CCanvas.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 
-using namespace std;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 600;
+const std::string WINDOW_TITLE = "Shapes Canvas";
 
-shared_ptr<IShape> ParseShape(const string& line)
+int main(int argc, char* argv[])
 {
-    istringstream iss(line);
-    string type;
-    iss >> type;
+    CShapeManager manager;
+    std::string line;
 
-    if (type == "line")
+    std::cout << "Enter shapes:\n";
+
+    while (std::getline(std::cin, line))
     {
-        double x1, y1, x2, y2;
-        string color;
-        iss >> x1 >> y1 >> x2 >> y2 >> color;
-        return make_shared<CLineSegment>(CPoint(x1, y1), CPoint(x2, y2), stoul(color, nullptr, 16));
+        if (line.empty()) break;
+        manager.AddShapeFromString(line);
     }
-    else if (type == "triangle")
+
+    manager.PrintInfoAboutExtremes();
+
+    if (argc == 1)
     {
-        double x1, y1, x2, y2, x3, y3;
-        string outline, fill;
-        iss >> x1 >> y1 >> x2 >> y2 >> x3 >> y3 >> outline >> fill;
-        return make_shared<CTriangle>(CPoint(x1, y1), CPoint(x2, y2), CPoint(x3, y3), stoul(outline, nullptr, 16), stoul(fill, nullptr, 16));
-    }
-    else if (type == "rectangle")
-    {
-        double x, y, w, h;
-        string outline, fill;
-        iss >> x >> y >> w >> h >> outline >> fill;
-        return make_shared<CRectangle>(CPoint(x, y), w, h, stoul(outline, nullptr, 16), stoul(fill, nullptr, 16));
-    }
-    else if (type == "circle")
-    {
-        double x, y, r;
-        string outline, fill;
-        iss >> x >> y >> r >> outline >> fill;
-        return make_shared<CCircle>(CPoint(x, y), r, stoul(outline, nullptr, 16), stoul(fill, nullptr, 16));
-    }
-    return nullptr;
-}
+        sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_TITLE);
+        CCanvas canvas(window);
 
-shared_ptr<IShape> GetMaxAreaShape(const vector<shared_ptr<IShape>>& shapes)
-{
-    return *max_element(shapes.begin(), shapes.end(), [](const auto& a, const auto& b) {
-        return a->GetArea() < b->GetArea();
-        });
-}
-
-shared_ptr<IShape> GetMinPerimeterShape(const vector<shared_ptr<IShape>>& shapes)
-{
-    return *min_element(shapes.begin(), shapes.end(), [](const auto& a, const auto& b) {
-        return a->GetPerimeter() < b->GetPerimeter();
-        });
-}
-
-void PrintShapeDetails(const string& title, const shared_ptr<IShape>& shape)
-{
-    cout << "\n" << title << ":" << endl;
-    cout << shape->ToString() << endl;
-    cout << "Perimeter: " << shape->GetPerimeter() << endl;
-    cout << "Area: " << shape->GetArea() << endl;
-    cout << "Outline color: #" << hex << shape->GetOutlineColor() << dec << endl;
-
-    if (auto solid = dynamic_pointer_cast<ISolidShape>(shape))
-    {
-        cout << "Fill color: #" << hex << solid->GetFillColor() << dec << endl;
-    }
-}
-
-int main()
-{
-    vector<shared_ptr<IShape>> shapes;
-    string line;
-
-    while (getline(cin, line))
-    {
-        if (!line.empty())
+        while (window.isOpen())
         {
-            auto shape = ParseShape(line);
-            if (shape)
+            sf::Event event;
+            while (window.pollEvent(event))
             {
-                shapes.push_back(shape);
+                if (event.type == sf::Event::Closed)
+                {
+                    window.close();
+                }
             }
+
+            window.clear(sf::Color::White);
+            manager.DrawShapes(canvas);
+            window.display();
         }
-    }
-
-    if (!shapes.empty())
-    {
-        auto maxAreaShape = GetMaxAreaShape(shapes);
-        auto minPerimeterShape = GetMinPerimeterShape(shapes);
-
-        PrintShapeDetails("Shape with maximum area", maxAreaShape);
-        PrintShapeDetails("Shape with minimum perimeter", minPerimeterShape);
-    }
-    else
-    {
-        cout << "No shapes were parsed." << endl;
     }
 
     return 0;
