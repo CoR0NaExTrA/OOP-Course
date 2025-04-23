@@ -44,6 +44,8 @@ public:
 private:
     void AllocateAndCopy(const char* pString, size_t length);
     void EnsureCapacity(size_t newLength);
+    void Free();
+    void Allocate(size_t capacity);
 
     size_t m_length = 0;
     size_t m_capacity = 0;

@@ -43,10 +43,7 @@ CMyString::CMyString(CMyString&& other) noexcept
 
 CMyString::~CMyString()
 {
-    if (m_data != &g_empty)
-    {
-        delete[] m_data;
-    }
+    Free();
 }
 
 CMyString& CMyString::operator=(const CMyString& other)
@@ -62,10 +59,8 @@ CMyString& CMyString::operator=(CMyString&& other) noexcept
 {
     if (this != &other)
     {
-        if (m_data != &g_empty)
-        {
-            delete[] m_data;
-        }
+        Free();
+
         m_data = other.m_data;
         m_length = other.m_length;
         m_capacity = other.m_capacity;
@@ -195,14 +190,9 @@ void CMyString::Clear()
 
 void CMyString::AllocateAndCopy(const char* pString, size_t length)
 {
-    if (m_data != &g_empty)
-    {
-        delete[] m_data;
-    }
-
-    m_capacity = length;
+    Free();
+    Allocate(length);
     m_length = length;
-    m_data = new char[m_capacity + 1];
     std::copy(pString, pString + length, m_data);
     m_data[length] = '\0';
 }
@@ -217,11 +207,24 @@ void CMyString::EnsureCapacity(size_t newLength)
     std::copy(m_data, m_data + m_length, newData);
     newData[m_length] = '\0';
 
+    Free();
+    m_data = newData;
+    m_capacity = newCapacity;
+}
+
+void CMyString::Free()
+{
     if (m_data != &g_empty)
     {
         delete[] m_data;
     }
+    m_data = &g_empty;
+    m_capacity = 0;
+    m_length = 0;
+}
 
-    m_data = newData;
-    m_capacity = newCapacity;
+void CMyString::Allocate(size_t capacity)
+{
+    m_capacity = capacity;
+    m_data = new char[capacity + 1];
 }
