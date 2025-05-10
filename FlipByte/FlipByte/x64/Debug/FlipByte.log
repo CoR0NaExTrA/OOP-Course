@@ -1,0 +1,4 @@
+﻿  FlipByte.vcxproj -> C:\Users\iatro\Copy_Frontend\OOP-Course\FlipByte\x64\Debug\FlipByte.exe
+  Tests failed
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073: The command ""C:\Users\iatro\Copy_Frontend\OOP-Course\FlipByte\FlipByte\Tests.bat" "C:\Users\iatro\Copy_Frontend\OOP-Course\FlipByte\x64\Debug\FlipByte.exe"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(166,5): error MSB3073: :VCEnd" exited with code 1.
